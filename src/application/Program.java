@@ -3,6 +3,8 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Predicate;
+
 import entities.Product;
 
 public class Program {
@@ -18,9 +20,11 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 
-		// TERCEIRA VERSÃO DA IMPLEMENTAÇÃO DO PREDICADO (Reference method not static)
-		list.removeIf(Product::notStaticProductPredicate);
-
+		// QUARTA VERSÃO DA IMPLEMENTAÇÃO DO PREDICADO (expression lambda declared)
+		Predicate<Product> pred = (p -> p.getPrice() >= 100.0);
+		
+		list.removeIf(pred);
+		
 		for (Product p : list) {
 			System.out.println(p);
 		}
