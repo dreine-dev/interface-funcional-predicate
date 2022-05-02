@@ -3,7 +3,6 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import Util.ProductPredicate;
 import entities.Product;
 
 public class Program {
@@ -19,8 +18,8 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 
-		// PRIMEIRA VERSÃO DA IMPLEMENTAÇÃO DO PREDICADO ( COM INTERFACE)
-		list.removeIf(new ProductPredicate());
+		// SEGUNDA VERSÃO DA IMPLEMENTAÇÃO DO PREDICADO (  Reference method static)
+		list.removeIf(Product::staticProductPredicate);
 
 		for (Product p : list) {
 			System.out.println(p);
