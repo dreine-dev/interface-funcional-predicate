@@ -18,8 +18,8 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 
-		// SEGUNDA VERSÃO DA IMPLEMENTAÇÃO DO PREDICADO (  Reference method static)
-		list.removeIf(Product::staticProductPredicate);
+		// TERCEIRA VERSÃO DA IMPLEMENTAÇÃO DO PREDICADO (Reference method not static)
+		list.removeIf(Product::notStaticProductPredicate);
 
 		for (Product p : list) {
 			System.out.println(p);
